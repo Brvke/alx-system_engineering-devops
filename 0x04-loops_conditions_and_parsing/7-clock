@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# bash script to demonstrate the use of nested loops
+
+hour=0
+
+while [ $hour -lt 13 ]
+do
+	echo "Hour: $hour"
+
+	minute=1
+	while [ $minute -lt 60 ]
+	do
+		echo "$minute"
+		(( minute++ ))
+	done
+	(( hour++ ))
+done

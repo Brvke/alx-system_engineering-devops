@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# bash script to demonstrate the use of elif and else
+
+count=0
+
+while [ $count -lt 10 ]
+do 
+	(( count++ ))
+	if [ $count -eq 4 ]
+	then
+		echo "bad luck"
+		continue
+	elif [ $count -eq 8 ]
+	then
+		echo "good luck"
+		continue
+	else
+		echo "Best School"
+		continue
+	fi
+done
