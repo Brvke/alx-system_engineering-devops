@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# creates a program that prints the current pid 
+
+ps -auxf 
