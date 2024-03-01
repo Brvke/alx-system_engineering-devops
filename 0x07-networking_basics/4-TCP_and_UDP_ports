@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# scrpit the prints the lisining pots and the prorgams associated
+netstat -pl
