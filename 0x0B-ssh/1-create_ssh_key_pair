@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# creates ssh_keygen a 4096 in file school with passphrase betty
+
+ssh-keygen -b 4096 -f school -N 'betty'
