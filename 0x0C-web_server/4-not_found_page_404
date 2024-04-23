@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Script to install and configure Nginx on a server
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow "Nginx HTTP"
+sudo chown -R $USER:$USER /var/www/html
+sudo chmod -R 755 /var/www
+sudo echo 'Hello World!' > /var/www/html/index.html
+sudo sed -i '/listen 80 default_server/a location /redirect_me { \n rewrite https://www.youtube.com/watch?v=QH2-TGUlwu4/ permanent; \n}' /etc/nginx/sites-enabled/default
+line='\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}'
+sudo echo "Ceci n'est pas une page\n" | sudo tee /usr/share/nginx/html/custom_404.html
+sudo sed -i "30i\ $line" /etc/nginx/sites-enabled/default
+sudo service nginx restart
