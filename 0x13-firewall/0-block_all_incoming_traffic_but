@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Bash script to configure a firewall to block all incoming
+#+ and allow ssh https http.
+
+sudo apt-get install -y ufw
+sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
