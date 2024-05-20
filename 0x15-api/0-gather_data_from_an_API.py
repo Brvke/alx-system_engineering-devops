@@ -13,17 +13,17 @@ if __name__ == "__main__":
         todos = requests.get(
             "{}/users/{}/todos/".format(url, employee_id)).json()
 
-        done_tasks = 0
-        done_tasks_str = ""
+        NUMBER_OF_DONE_TASKS = 0
+        TOTAL_NUMBER_OF_TASKS = ""
         for todo in todos:
             if todo['completed']:
-                done_tasks += 1
-                done_tasks_str += "\t {}\n".format(todo.get('title'))
+                NUMBER_OF_DONE_TASKS += 1
+                TOTAL_NUMBER_OF_TASKS += "\t {}\n".format(todo.get('title'))
         print(
             "Employee {} is done with tasks({}/{}):"
-            .format(user.get('name'), done_tasks, len(todos)))
+            .format(user.get('name'),  NUMBER_OF_DONE_TASKS, len(todos)))
 
-        print(done_tasks_str[:-1])
+        print(TOTAL_NUMBER_OF_TASKS[:-1])
 
     else:
         print("Usage: ./0-gather_data_from_an_API.py <employee_id>")
