@@ -3,14 +3,10 @@
 
 import requests
 
-VERSION = "1.0.0"
-
 def top_ten(subreddit):
     """Fetch and print the titles of the first 10 hot posts"""
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
-    headers = {
-        'User-Agent': f'python:reddit_scraper:v{VERSION} (by /u/GuidanceOk8279)'
-    }
+    headers = {'User-Agent': 'subreddit.subscriber.counter:v1.0'}
     
     response = requests.get(url, headers=headers, allow_redirects=False)
     

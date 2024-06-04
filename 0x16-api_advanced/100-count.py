@@ -10,7 +10,7 @@ def count_words(subreddit, word_list, count=0, after=""):
     the title of all the hot topics'''
 
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    headers = {'User-Agent': 'python:reddit_scraper:v1.0 (by /u/GuidanceOk8279)'}
+    headers = {'User-Agent': 'subreddit.subscriber.counter:v1.0'}
 
     params = {
         "limit": 100,
